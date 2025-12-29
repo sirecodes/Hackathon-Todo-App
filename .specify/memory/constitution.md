@@ -1,55 +1,74 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: None (initial creation) → 0.1.0
+Modified principles: None (all new)
+Added sections: Project Vision
+Removed sections: [SECTION_3_NAME] (no explicit content in user prompt)
+Templates requiring updates:
+- .specify/templates/plan-template.md: ⚠ pending (conceptual alignment for initial constitution)
+- .specify/templates/spec-template.md: ⚠ pending (conceptual alignment for initial constitution)
+- .specify/templates/tasks-template.md: ⚠ pending (conceptual alignment for initial constitution)
+- .specify/templates/commands/*.md: ⚠ pending (conceptual alignment for initial constitution)
+Follow-up TODOs: None
+-->
+# The Evolution of Todo Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Spec-Driven Development Only
+Every feature MUST originate from a written specification.
+No implementation MAY occur without an approved spec.
+Specs MUST be versioned and stored in `/specs/history`.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Agentic Development Workflow
+Follow this strict order: Specification → Plan generation → Task decomposition → Implementation via Claude Code.
+No manual boilerplate code IS allowed.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Clean Architecture & Code Quality
+Clear separation of concerns.
+Readable, testable, idiomatic Python.
+Logical module boundaries.
+Minimal complexity, maximum clarity.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Phase Discipline
+Phase I MUST remain: Console-based, In-memory only, Single-process, No persistence, No networking, No frameworks.
+Future scalability SHOULD be considered but NOT implemented.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Technology Constraints
+Python 3.13+.
+UV for environment management.
+No external dependencies UNLESS explicitly justified in spec.
+MUST run on a clean environment using documented steps.
 
-### [PRINCIPLE_6_NAME]
+### Functional Scope (Phase I)
+The system MUST support exactly the following: Add Todo, Delete Todo, Update Todo, View Todos, Mark Todo as Complete.
 
+### Observability of Process
+Decisions MUST be explainable.
+Specs, plans, and prompts ARE first-class artifacts.
+The learning value of *how* the system was built IS as important as the code itself.
 
-[PRINCIPLE__DESCRIPTION]
+### Repository Structure Enforcement
+The constitution MUST enforce: `/src` for application code, `/specs/history` for specifications, `CLAUDE.md` for Claude Code instructions, `README.md` for setup and usage, a constitution file at the root.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### AI Collaboration Rules
+Claude Code IS treated as a co-developer.
+Prompts, iterations, and refinements MUST align with this constitution.
+No hallucinated features or scope creep.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Project Vision
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+This project simulates the real-world evolution of software systems, starting from a minimal CLI-based in-memory todo application and gradually evolving into a distributed, cloud-native, AI-powered system.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+In Phase I, the focus is on: Fundamental software architecture, Spec-driven development, Agentic workflows, Clean, maintainable Python code, Process transparency over manual coding.
+
+Students act as **Product Architects**, not traditional programmers.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other project guidelines and documentation.
+Amendments to this constitution MUST be proposed, documented, and approved by the Product Architect,
+with a clear rationale for changes and an impact assessment on dependent artifacts.
+All proposed changes to the project MUST be reviewed against the principles defined herein for compliance.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 0.1.0 | **Ratified**: 2025-12-29 | **Last Amended**: 2025-12-29
